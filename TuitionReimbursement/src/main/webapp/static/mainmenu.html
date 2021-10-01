@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title> Tuition Reimbursement</title>
+        <link rel="stylesheet" href="mainmenustyle.css"/>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend> Submit a Request </legend>
+                <label>Event Type: 
+                    <select name="eventType">
+                        <option value="University Course">University Course</option>
+                        <option value="Seminar">Seminar</option>
+                        <option value="Certification Prep">Certification Prep</option>
+                        <option value="Certification">Certification</option>
+                        <option value="Technical Training">Technical Training</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+                <label>Event Date: 
+                    <input type="date" name="eventDate">
+                </label>
+                <label>Event Time: 
+                    <input type="time" name="eventTime">
+                </label>
+                <label>Location: 
+                    <input type="text" name="eventLocation">
+                </label>
+                <label>Grading Format: 
+                    <select name="gradingFormat">
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+                <label>Description: 
+                    <input type="text" name="description">
+                </label>
+                <label>Justification: 
+                    <input type="text" name="justification">
+                </label>
+
+                <input type="submit" value="Submit Request">
+            </fieldset>
+        </form>
+        <form>    
+            <fieldset>
+                <legend> Submit a Grade </legend>
+                <label>Select a Request: 
+                    <select name="request">
+
+                    </select>
+                </label>
+
+                <input type="submit" value="Submit Grade">
+            </fieldset>
+        </form>
+    </body>
+</html>

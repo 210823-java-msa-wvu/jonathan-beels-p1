@@ -3,6 +3,9 @@ package com.revature.models;
 import javax.annotation.Generated;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Entity
 @Table(name="employee")
 public class Employee {
@@ -20,6 +23,8 @@ public class Employee {
     private Integer supervisor;
     private Integer department;
     private Boolean benCo;
+
+
 
     public Employee() {
 
@@ -149,5 +154,19 @@ public class Employee {
                 ", benCo=" + benCo +
                 '}';
 
+    }
+
+    public String toJSON() {
+        ObjectMapper om = new ObjectMapper();
+        try {
+            String json = om.writeValueAsString(this);
+            return json;
+        }
+
+        catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return "";
     }
 }

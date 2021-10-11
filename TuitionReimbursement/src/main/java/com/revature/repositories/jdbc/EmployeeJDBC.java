@@ -53,7 +53,7 @@ public class EmployeeJDBC implements EmployeeRepo{
     @Override
     public Employee getByUsername(String username) {
         try (Connection conn = cu.getConnection()) {
-            String sql ="select * from employee where id = ?";
+            String sql ="select * from employee where user_name = ?";
 
             PreparedStatement ps =conn.prepareStatement(sql);
             ps.setString(1, username);
@@ -61,6 +61,7 @@ public class EmployeeJDBC implements EmployeeRepo{
             ResultSet rs =ps.executeQuery();
 
             if (rs.next()) {
+                System.out.println("Flag exist");
                 Employee emp = new Employee(
                         rs.getInt("employee_id"),
                         rs.getString("user_name"),
@@ -83,6 +84,7 @@ public class EmployeeJDBC implements EmployeeRepo{
             e.printStackTrace();
         }
 
+        System.out.println("flag null");
         return null;
     }
 
@@ -123,6 +125,48 @@ public class EmployeeJDBC implements EmployeeRepo{
         }
 
         return null;
+    }
+
+    public boolean isDS(Integer id) {
+        try (Connection conn = cu.getConnection()) {
+            String sql = "select * from employee where supervisor = ?";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return true;
+            }
+        }
+
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    public Boolean isDH(Integer id) {
+        try (Connection conn = cu.getConnection()) {
+            String sql = "select * from department where department_head = ?";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return true;
+            }
+        }
+
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
     @Override

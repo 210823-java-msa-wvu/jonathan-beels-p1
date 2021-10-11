@@ -29,13 +29,16 @@ public class ReimburseRequest {
     private Boolean dhApproval;
     private Boolean benCoApproval;
     private String justification;
+    private Boolean urgent;
+    private Boolean additionalInfo;
 
     public ReimburseRequest() {
 
     }
 
     public ReimburseRequest(Integer id, Integer employeeId, Integer amount, String eventType, Date eventDate, Time eventTime,
-                            String location, String description, String gradingFormat, String grade, Boolean dsApproval, Boolean dhApproval, Boolean benCoApproval, String justification) {
+                            String location, String description, String gradingFormat, String grade, Boolean dsApproval,
+                            Boolean dhApproval, Boolean benCoApproval, String justification, Boolean urgent, Boolean additionalInfo) {
         this.id = id;
         this.employeeId = employeeId;
         this.amount = amount;
@@ -50,6 +53,8 @@ public class ReimburseRequest {
         this.dhApproval = dhApproval;
         this.benCoApproval = benCoApproval;
         this.justification =justification;
+        this.urgent = urgent;
+        this.additionalInfo = additionalInfo;
     }
 
     public Integer getId() {
@@ -164,6 +169,14 @@ public class ReimburseRequest {
         this.justification = justification;
     }
 
+    public Boolean getUrgent() {
+        return urgent;
+    }
+
+    public void setUrgent(Boolean urgent) {
+        this.urgent = urgent;
+    }
+
     @Override
     public String toString() {
         return "ReimburseRequest{" +
@@ -181,6 +194,7 @@ public class ReimburseRequest {
                 ", dhApproval=" + dhApproval +
                 ", benCoApproval=" + benCoApproval +
                 ", justification='" + justification + '\'' +
+                ", urgent='" + urgent + '\'' +
                 '}';
     }
 }

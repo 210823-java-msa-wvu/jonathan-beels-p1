@@ -20,6 +20,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class MenuServlet extends HttpServlet{
@@ -31,14 +33,24 @@ public class MenuServlet extends HttpServlet{
     private RequestRepo requestRepo = new RequestJDBC();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, JsonProcessingException {
+        System.out.println("Recieved Request");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        om.setDateFormat(df);
         try {
+            System.out.println("Getting list");
             List<ReimburseRequest> requestList = requestServices.getAllRequests();
-            List<Employee> employeeList= empService.getAllEmployees();
             String reqJSON = om.writeValueAsString(requestList);
-            String empJSON = om.writeValueAsString(employeeList);
-            Cookie cookie = new Cookie("requestList", reqJSON);
+            System.out.println("Writing Response");
+            response.getWriter().write(reqJSON);
+            System.out.println(reqJSON);
+
+
+            response.setStatus(200);
+            System.out.println("Response Sent");
         } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

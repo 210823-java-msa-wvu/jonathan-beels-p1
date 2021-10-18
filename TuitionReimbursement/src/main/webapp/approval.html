@@ -31,20 +31,24 @@
             </div>
           </nav>
 
-          <fieldset>
-            <legend> Submit a Grade </legend>
+          <div>
             <label for="request">Select a Request: 
-                <select id="request" name="request" required>
+                <select id="request" name="request" onChange="loadRequest()" required>
 
                 </select>
             </label>
+            <div id="display" class="container">
+              
+            </div>
 
-            <label for="grade">
-                <input type="text" id="grade" name="grade" required>
-            </label>
-
-            <input type="button" class="btn btn-primary" onClick="approve()" value="Submit Grade">
-        </fieldset>
+            <input type="button" class="btn btn-primary" onClick="approve()" value="Approve">
+            <br/>
+            <br/>
+            <input type="button" class="btn btn-secondary" onClick="requestInfo()" value="Request Information">
+            <br/>
+            <br/>
+            <input type="button" class="btn btn-danger" onClick="reject()" value="Reject">
+        </div>
         <script src="approval.js"></script>
         <!-- Bootstrap Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

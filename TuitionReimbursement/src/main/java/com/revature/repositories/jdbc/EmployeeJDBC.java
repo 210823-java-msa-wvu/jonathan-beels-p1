@@ -17,12 +17,12 @@ public class EmployeeJDBC implements EmployeeRepo{
     @Override
     public Employee getById(Integer id) {
         try (Connection conn = cu.getConnection()) {
-            String sql ="select * from employee where id = ?";
+            String sql ="select * from employee where employee_id = ?";
 
             PreparedStatement ps =conn.prepareStatement(sql);
             ps.setInt(1, id);
 
-            ResultSet rs =ps.executeQuery();
+            ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
                 Employee emp = new Employee(
@@ -173,7 +173,7 @@ public class EmployeeJDBC implements EmployeeRepo{
     public void update(Employee employee) {
         try (Connection conn = cu.getConnection()) {
             String sql = "update employee set employee_id = ?, first_name = ?, last_name = ?, remaining_allowance = ?, " +
-                    "pending = ?, awarded = ?, username = ?, password = ?, supervisor = ?, ben_co = ?, department_id = ? where employee_id = ?";
+                    "pending = ?, awarded = ?, user_name = ?, pass_word = ?, supervisor = ?, ben_co = ?, department_id = ? where employee_id = ?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, employee.getId());

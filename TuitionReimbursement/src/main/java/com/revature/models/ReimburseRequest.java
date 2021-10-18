@@ -6,8 +6,9 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import javax.annotation.Generated;
 import javax.persistence.*;
 
-import java.sql.Date;
-import java.sql.Time;
+//import java.sql.Date;
+//import java.sql.Time;
+import java.util.Date;
 
 @Entity
 @Table(name="request")
@@ -20,7 +21,7 @@ public class ReimburseRequest {
     private Integer amount;
     private String eventType;
     private Date eventDate;
-    private Time eventTime;
+    private String eventTime;
     private String location;
     private String description;
     private String gradingFormat;
@@ -31,14 +32,15 @@ public class ReimburseRequest {
     private String justification;
     private Boolean urgent;
     private Boolean additionalInfo;
+    private Boolean rejected;
 
     public ReimburseRequest() {
 
     }
 
-    public ReimburseRequest(Integer id, Integer employeeId, Integer amount, String eventType, Date eventDate, Time eventTime,
+    public ReimburseRequest(Integer id, Integer employeeId, Integer amount, String eventType, Date eventDate, String eventTime,
                             String location, String description, String gradingFormat, String grade, Boolean dsApproval,
-                            Boolean dhApproval, Boolean benCoApproval, String justification, Boolean urgent, Boolean additionalInfo) {
+                            Boolean dhApproval, Boolean benCoApproval, String justification, Boolean urgent, Boolean additionalInfo, Boolean rejected) {
         this.id = id;
         this.employeeId = employeeId;
         this.amount = amount;
@@ -55,6 +57,7 @@ public class ReimburseRequest {
         this.justification =justification;
         this.urgent = urgent;
         this.additionalInfo = additionalInfo;
+        this.rejected = rejected;
     }
 
     public Integer getId() {
@@ -97,11 +100,11 @@ public class ReimburseRequest {
         this.eventDate = eventDate;
     }
 
-    public Time getEventTime() {
+    public String getEventTime() {
         return eventTime;
     }
 
-    public void setEventTime(Time eventTime) {
+    public void setEventTime(String eventTime) {
         this.eventTime = eventTime;
     }
 
@@ -175,6 +178,22 @@ public class ReimburseRequest {
 
     public void setUrgent(Boolean urgent) {
         this.urgent = urgent;
+    }
+
+    public Boolean getAdditionalInfo() {
+        return additionalInfo;
+    }
+
+    public void setAdditionalInfo(Boolean additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+
+    public Boolean getRejected() {
+        return rejected;
+    }
+
+    public void setRejected(Boolean rejected) {
+        this.rejected = rejected;
     }
 
     @Override

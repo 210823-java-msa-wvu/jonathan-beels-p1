@@ -13,10 +13,12 @@ import java.util.List;
 
 public class RequestServices {
     EmployeeRepo empRepo = new EmployeeJDBC();
-    RequestRepo reqRepo = new RequestJDBC();
+    RequestJDBC reqRepo = new RequestJDBC();
 
     public ReimburseRequest createRequest(ReimburseRequest r) {
         Employee emp = empRepo.getById(r.getEmployeeId());
+
+        System.out.println(emp.getId());
 
         if (emp != null) {
             return reqRepo.add(r);
@@ -36,9 +38,19 @@ public class RequestServices {
         return reqRepo.getAll();
     }
 
+    public List<ReimburseRequest> getDSRequests(Integer id) {
+        return reqRepo.getByDS(id);
+    }
+
+    public List<ReimburseRequest> getDHRequests(Integer id) {
+        return reqRepo.getByDH(id);
+    }
+
     public boolean updateRequest(ReimburseRequest r) {
         if (reqRepo.getById(r.getId()) != null) {
+            System.out.println("Flag1");
             reqRepo.update(r);
+            System.out.println("true");
             return true;
         }
 

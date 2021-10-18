@@ -33,7 +33,7 @@
             <fieldset>
                 <legend> Update Request Info </legend>
                 <label for="request">Select a Request: 
-                    <select id="request" name="request" required>
+                    <select id="request" name="request" onChange="fill()" required>
                         
                     </select>
                 </label>
@@ -74,7 +74,7 @@
                 <label>Grading Format: 
                     <select id="gradingFormat" name="gradingFormat" required>
                         <option value="Percentage">Percentage</option>
-                        <option value="Attendence">Other</option>
+                        <option value="Attendence">Attendance</option>
                         <option value="Pass/Fail">Pass/Fail</option>
                     </select>
                 </label>
@@ -93,7 +93,9 @@
                 <label for="urgent">Urgent:
                     <input type="checkbox" id="urgent" name="urgent">
                 </label>
-                <input type="button" class="btn btn-primary" onclick="submit()" value="Submit Request">
+                <br/>
+                <br/>
+                <input type="button" class="btn btn-primary" onclick="submitGrade()" value="Update Request">
             </fieldset>
             <script src="update.js"></script>
             <!-- Bootstrap Scripts -->

@@ -1,38 +1,34 @@
-Object.addEventListener("load", load);
+document.addEventListener("load", getRequests());
+let list;
 
 function load() {
-    let userCookie = JSON.parse(getCookie("employee"));
-    let user = JSON.parse(userCookie);
-    let cookie = JSON.parse(getCookie("requestList"));
-    let list = JSON.parse(cookie);
+    
+    let benCoCookie = JSON.parse(getCookie("benCo"));
+    let benCo = JSON.parse(benCoCookie)
     let dsCookie = JSON.parse(getCookie("directSupervisor"));
     let ds = JSON.parse(dsCookie);
     let dhCookie = JSON.parse(getCookie("departmentHead"));
     let dh = JSON.parse(dhCookie);
 
-    if ((user.benCo === "true") || (ds === "true") || (dh === "true")) {
+    if ((benCo == true) || (ds == true) || (dh == true)) {
+        console.log("flag Approval");
         let li = document.createElement("li");
-        li.setAttribute("class", "nav-item");
-
-        let a = document.createElement("a");
-        a.setAttribute("class", "nav-link");
-        a.setAttribute("href", "http://localhost:8080/TuitionReimbursment/approval.html");
-
-        li.appendChild(a);
-
         let element = document.getElementById("navbar");
+        li.innerHTML += '<li class="nav-item"><a class="nav-link" href="http://localhost:8080/TuitionReimbursement/approval.html">Approve Request</a></li>'
         element.appendChild(li);
     }
 }
 
 async function submit() {
-    let userCookie = JSON.parse(getCookie("employee"));
-    let user = JSON.parse(userCookie);
+    let userIdCookie = JSON.parse(getCookie("employeeId"));
+    let userId = JSON.parse(userIdCookie);
+
+    console.log(userId);
     
-    let url = "http://localhost:8080/TuitionReimbursment/requests";
+    let url = "http://localhost:8080/TuitionReimbursement/requests";
 
     let req = {
-        employeeId: user.id,
+        employeeId: userId,
         amount: document.getElementById('amount').value,
         eventType: document.getElementById('eventType').value,
         eventDate: document.getElementById('eventDate').value,
@@ -41,7 +37,7 @@ async function submit() {
         description: document.getElementById('description').value,
         gradingFormat: document.getElementById('gradingFormat').value,
         justification: document.getElementById('justification').value,
-        urgent: document.getElementById('urgent').value
+        urgent: document.getElementById('urgent').checked
     }
 
     console.log(req);
@@ -49,14 +45,47 @@ async function submit() {
     let res = await fetch(url, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(user)
+        body: JSON.stringify(req)
     });
 
     let resJson = await res.text()
     .then (res => {
         console.log(res);
+        window.location.replace("http://localhost:8080/TuitionReimbursement/menu.html");
     })
     .catch( error => {
         console.log(error);
     })
 }
+
+async function getRequests() {
+    let url = "http://localhost:8080/TuitionReimbursement/requests"
+
+    let res = await fetch(url, {
+        method: "GET",
+        headers: {"Content-Type": "application/json"}
+    }).then(res => res.json())
+    .then(data => {
+        console.log(data);
+        list = data;
+        console.log(list);
+    });
+
+    load();
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }

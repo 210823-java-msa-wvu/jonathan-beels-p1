@@ -5,37 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd936936-0b5c-485f-aa09-4347463e7c66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/RequestServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/ApprovalServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/GradeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/MenuServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/RequestServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/approval.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/approval.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/grade.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/grade.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/requestSubmit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/requestSubmit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/update.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/controllers/FrontController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/ReimburseRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/ReimburseRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/repositories/jdbc/EmployeeJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/repositories/jdbc/EmployeeJDBC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/repositories/jdbc/RequestJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/repositories/jdbc/RequestJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/EmployeeServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/EmployeeServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/servlets/FrontControllerServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/servlets/RequestHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/connection.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/connection.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/RequestServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/RequestServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/servlets/ApprovalServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/ApprovalServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/servlets/GradeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/GradeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/servlets/MenuServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/MenuServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/servlets/RequestServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/servlets/RequestServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/mainmenu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/approval.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/approval.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/approval.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/approval.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/grade.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/grade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/requestSubmit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/requestSubmit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/requestSubmit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/requestSubmit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/update.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/update.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +64,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Work Stuff/demos/LibraryApp" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">

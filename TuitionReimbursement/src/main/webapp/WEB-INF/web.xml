@@ -43,4 +43,14 @@
         <servlet-name>Grade</servlet-name>
         <url-pattern>/grade</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Approval</servlet-name>
+        <servlet-class>com.revature.servlets.ApprovalServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Approval</servlet-name>
+        <url-pattern>/approval</url-pattern>
+    </servlet-mapping>
 </web-app>
